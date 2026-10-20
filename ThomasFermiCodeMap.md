@@ -1,4 +1,4 @@
-# Thomas–Fermi Code Map (For Python Files)
+# Thomas–Fermi Code Map
 
 What each file in the pentaquark package does, and which values in the calculation are genuinely chosen rather than determined. Numbers throughout are computed from the code itself, at η = 1 — Case I, where the inner region is the anti-charm one. Region labels follow the code, which differ from the manuscript's at this η; the [seed section](#part-2--the-seed) sets out the mapping.
 
