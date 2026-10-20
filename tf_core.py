@@ -45,10 +45,12 @@ class Config:
     Q2: float
     Q3: float
     m2_start: float
-    xx: float = 0.346
-    zz: float = 306.0
-    aa: float = 0.197
-    yy: float = 107.6
+    xx: float = 0.3114
+    zz: float = 306.0          # light quark mass, also sets a1 = 1/zz
+    aa: float = 0.197          # alfa2 = m_light / m_heavy
+    yy: float = 96.84
+    m_light: float = 306.0     # rest mass used in the additive term
+    m_heavy: float = 1553.0
 
     @property
     def eta(self):
@@ -306,7 +308,8 @@ class Model:
 
         Vol = 4 * P_VOL / 3 * self.R ** 3 * x1 ** 3 * self.B
         Ewom = T1 + V1 + Vol
-        Etot = Ewom + n1 * g1 * 306 + n3 * g3 * 1553 + n2 * g2 * 1553
+        Etot = (Ewom + n1 * g1 * c.m_light
+                + (n3 * g3 + n2 * g2) * c.m_heavy)
 
         return dict(m2=m2, x1=x1, x2=x2, x3=x3, u1=u1, u2=u2, u3=u3,
                     s1=s1, s2=s2, s3=s3, R=self.R,

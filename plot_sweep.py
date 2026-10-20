@@ -9,6 +9,8 @@ panels  : (a) kinetic (b) potential (c) volume (d) total, all per quark
 If the sweep covers more than one eta, pass --eta N to pick which one.
 """
 
+import os
+_HERE = os.path.dirname(os.path.abspath(__file__))
 import argparse, csv
 import numpy as np
 import matplotlib
@@ -17,9 +19,9 @@ import matplotlib.pyplot as plt
 from matplotlib.ticker import AutoMinorLocator
 
 ap = argparse.ArgumentParser()
-ap.add_argument('--csv', default='/mnt/user-data/uploads/sweep_results.csv')
+ap.add_argument('--csv', default=os.path.join(_HERE, 'sweep_results.csv'))
 ap.add_argument('--eta', type=int, default=None)
-ap.add_argument('--out', default='/mnt/user-data/outputs/sweep_energies')
+ap.add_argument('--out', default=os.path.join(_HERE, 'sweep_energies'))
 a = ap.parse_args()
 
 rows = list(csv.DictReader(open(a.csv)))
