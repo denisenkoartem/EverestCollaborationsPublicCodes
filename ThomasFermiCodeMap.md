@@ -272,17 +272,20 @@ Once m₂ is fixed, the solution y(x) is fully determined. The region edges are 
 
 ### The starting guess cannot reach the answer
 
-At η = 1 (Case I), so `x2` here is the anti-charm edge. Varying where its search begins, over a factor of a thousand, at m₂ = 12.822. Every digit is identical, because the answer was already there before the search started.
+At η = 1 (Case I), so `x2` here is the anti-charm edge. Varying where its search begins, over a factor of 30 000 — the largest start is six times the answer and well outside the system itself — at m₂ = 12.822. Every digit is identical, because the answer was already there before the search started.
 
 | x₂ start | x₂ found | x₁ found | E_p (MeV) |
 |---:|---:|---:|---:|
+| 0.0001 | 0.288060387398 | 0.502821169908 | 138.73462386 |
 | 0.001 | 0.288060387398 | 0.502821169908 | 138.73462386 |
-| 0.005 | 0.288060387398 | 0.502821169908 | 138.73462386 |
-| 0.010 | 0.288060387398 | 0.502821169908 | 138.73462386 |
-| 0.050 | 0.288060387398 | 0.502821169908 | 138.73462386 |
-| 0.200 | 0.288060387398 | 0.502821169908 | 138.73462386 |
-| 0.500 | 0.288060387398 | 0.502821169908 | 138.73462386 |
-| 1.000 | 0.288060387398 | 0.502821169908 | 138.73462386 |
+| 0.01 | 0.288060387398 | 0.502821169908 | 138.73462386 |
+| 0.1 | 0.288060387398 | 0.502821169908 | 138.73462386 |
+| 0.5 | 0.288060387398 | 0.502821169908 | 138.73462386 |
+| 1.0 | 0.288060387398 | 0.502821169908 | 138.73462386 |
+| 2.0 | 0.288060387398 | 0.502821169908 | 138.73462386 |
+| 3.0 | 0.288060387398 | 0.502821169908 | 138.73462386 |
+
+There is a limit, and it is worth stating honestly. Past a start of roughly 3 the search stops working — but it does not find a different root. That far outside the physical region the Thomas–Fermi integration itself diverges, so the search never gets off the ground. Within any range a person would actually choose, the starting value leaves no trace on the answer.
 
 ### Two unrelated algorithms land in the same place
 
